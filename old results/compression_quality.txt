@@ -1,0 +1,429 @@
+=== Compression Quality Checker WITH Overhead Distribution ===
+
+
+--- Analyzing: multi_model_quant_eval\efficientnet_b0_buffers_compression.csv ---
+Total rows: 196
+
+ ⚠ Found 52 tensors with ratio < 1:
+   - features.0.1.running_mean (8-bit), ratio=0.941
+   - features.0.1.running_mean (16-bit), ratio=0.970
+   - features.0.1.running_var (8-bit), ratio=0.941
+   - features.0.1.running_var (16-bit), ratio=0.970
+   - features.1.0.block.0.1.running_mean (8-bit), ratio=0.941
+   - features.1.0.block.0.1.running_mean (16-bit), ratio=0.970
+   - features.1.0.block.2.1.running_mean (8-bit), ratio=0.889
+   - features.1.0.block.2.1.running_mean (16-bit), ratio=0.941
+   - features.1.0.block.2.1.running_var (8-bit), ratio=0.889
+   - features.1.0.block.2.1.running_var (16-bit), ratio=0.941
+   - features.2.0.block.0.1.running_mean (8-bit), ratio=0.980
+   - features.2.0.block.0.1.running_mean (16-bit), ratio=0.990
+   - features.2.0.block.3.1.running_mean (8-bit), ratio=0.923
+   - features.2.0.block.3.1.running_mean (16-bit), ratio=0.960
+   - features.2.0.block.3.1.running_var (8-bit), ratio=0.923
+   - features.2.0.block.3.1.running_var (16-bit), ratio=0.960
+   - features.2.1.block.0.1.running_mean (8-bit), ratio=0.986
+   - features.2.1.block.0.1.running_mean (16-bit), ratio=0.993
+   - features.2.1.block.3.1.running_mean (8-bit), ratio=0.923
+   - features.2.1.block.3.1.running_mean (16-bit), ratio=0.960
+
+ ⚠ Found 52 tensors with negative gain:
+   - features.0.1.running_mean (8-bit), gain=-6.25%
+   - features.0.1.running_mean (16-bit), gain=-3.12%
+   - features.0.1.running_var (8-bit), gain=-6.25%
+   - features.0.1.running_var (16-bit), gain=-3.12%
+   - features.1.0.block.0.1.running_mean (8-bit), gain=-6.25%
+   - features.1.0.block.0.1.running_mean (16-bit), gain=-3.12%
+   - features.1.0.block.2.1.running_mean (8-bit), gain=-12.50%
+   - features.1.0.block.2.1.running_mean (16-bit), gain=-6.25%
+   - features.1.0.block.2.1.running_var (8-bit), gain=-12.50%
+   - features.1.0.block.2.1.running_var (16-bit), gain=-6.25%
+   - features.2.0.block.0.1.running_mean (8-bit), gain=-2.08%
+   - features.2.0.block.0.1.running_mean (16-bit), gain=-1.04%
+   - features.2.0.block.3.1.running_mean (8-bit), gain=-8.33%
+   - features.2.0.block.3.1.running_mean (16-bit), gain=-4.17%
+   - features.2.0.block.3.1.running_var (8-bit), gain=-8.33%
+   - features.2.0.block.3.1.running_var (16-bit), gain=-4.17%
+   - features.2.1.block.0.1.running_mean (8-bit), gain=-1.39%
+   - features.2.1.block.0.1.running_mean (16-bit), gain=-0.69%
+   - features.2.1.block.3.1.running_mean (8-bit), gain=-8.33%
+   - features.2.1.block.3.1.running_mean (16-bit), gain=-4.17%
+
+ 🔍 Found 52 BAD tensors (ratio <1 or gain <0).
+   Showing first 30 with overhead details:
+
+   - features.0.1.running_mean (8-bit): raw=32B → comp=34B (overhead=2 bytes)
+   - features.0.1.running_mean (16-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - features.0.1.running_var (8-bit): raw=32B → comp=34B (overhead=2 bytes)
+   - features.0.1.running_var (16-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - features.1.0.block.0.1.running_mean (8-bit): raw=32B → comp=34B (overhead=2 bytes)
+   - features.1.0.block.0.1.running_mean (16-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - features.1.0.block.2.1.running_mean (8-bit): raw=16B → comp=18B (overhead=2 bytes)
+   - features.1.0.block.2.1.running_mean (16-bit): raw=32B → comp=34B (overhead=2 bytes)
+   - features.1.0.block.2.1.running_var (8-bit): raw=16B → comp=18B (overhead=2 bytes)
+   - features.1.0.block.2.1.running_var (16-bit): raw=32B → comp=34B (overhead=2 bytes)
+   - features.2.0.block.0.1.running_mean (8-bit): raw=96B → comp=98B (overhead=2 bytes)
+   - features.2.0.block.0.1.running_mean (16-bit): raw=192B → comp=194B (overhead=2 bytes)
+   - features.2.0.block.3.1.running_mean (8-bit): raw=24B → comp=26B (overhead=2 bytes)
+   - features.2.0.block.3.1.running_mean (16-bit): raw=48B → comp=50B (overhead=2 bytes)
+   - features.2.0.block.3.1.running_var (8-bit): raw=24B → comp=26B (overhead=2 bytes)
+   - features.2.0.block.3.1.running_var (16-bit): raw=48B → comp=50B (overhead=2 bytes)
+   - features.2.1.block.0.1.running_mean (8-bit): raw=144B → comp=146B (overhead=2 bytes)
+   - features.2.1.block.0.1.running_mean (16-bit): raw=288B → comp=290B (overhead=2 bytes)
+   - features.2.1.block.3.1.running_mean (8-bit): raw=24B → comp=26B (overhead=2 bytes)
+   - features.2.1.block.3.1.running_mean (16-bit): raw=48B → comp=50B (overhead=2 bytes)
+   - features.2.1.block.3.1.running_var (8-bit): raw=24B → comp=26B (overhead=2 bytes)
+   - features.2.1.block.3.1.running_var (16-bit): raw=48B → comp=50B (overhead=2 bytes)
+   - features.3.0.block.0.1.running_mean (16-bit): raw=288B → comp=290B (overhead=2 bytes)
+   - features.3.0.block.3.1.running_mean (8-bit): raw=40B → comp=42B (overhead=2 bytes)
+   - features.3.0.block.3.1.running_mean (16-bit): raw=80B → comp=82B (overhead=2 bytes)
+   - features.3.0.block.3.1.running_var (16-bit): raw=80B → comp=81B (overhead=1 bytes)
+   - features.3.1.block.0.1.running_mean (8-bit): raw=240B → comp=242B (overhead=2 bytes)
+   - features.3.1.block.0.1.running_mean (16-bit): raw=480B → comp=482B (overhead=2 bytes)
+   - features.3.1.block.3.1.running_mean (8-bit): raw=40B → comp=42B (overhead=2 bytes)
+   - features.3.1.block.3.1.running_mean (16-bit): raw=80B → comp=82B (overhead=2 bytes)
+   ... + 22 more
+
+ 📊 Overhead distribution summary:
+   1 byte  : 2
+   2 bytes : 50
+   3 bytes : 0
+   ≥4 bytes: 0
+ ⇒ ❌ This model likely needs BYPASS mode for some tensors.
+
+--- Analyzing: multi_model_quant_eval\efficientnet_b0_compression.csv ---
+Total rows: 426
+
+ ⚠ Found 94 tensors with ratio < 1:
+   - features.0.1.weight (8-bit), ratio=0.941
+   - features.0.1.weight (16-bit), ratio=0.970
+   - features.0.1.bias (8-bit), ratio=0.941
+   - features.0.1.bias (16-bit), ratio=0.970
+   - features.1.0.block.0.1.weight (8-bit), ratio=0.941
+   - features.1.0.block.0.1.weight (16-bit), ratio=0.970
+   - features.1.0.block.0.1.bias (8-bit), ratio=0.941
+   - features.1.0.block.0.1.bias (16-bit), ratio=0.970
+   - features.1.0.block.1.fc1.bias (8-bit), ratio=0.800
+   - features.1.0.block.1.fc1.bias (16-bit), ratio=0.889
+   - features.1.0.block.1.fc2.bias (8-bit), ratio=0.941
+   - features.1.0.block.1.fc2.bias (16-bit), ratio=0.970
+   - features.1.0.block.2.1.weight (8-bit), ratio=0.889
+   - features.1.0.block.2.1.weight (16-bit), ratio=0.941
+   - features.1.0.block.2.1.bias (8-bit), ratio=0.889
+   - features.1.0.block.2.1.bias (16-bit), ratio=0.941
+   - features.2.0.block.0.1.weight (16-bit), ratio=0.990
+   - features.2.0.block.0.1.bias (8-bit), ratio=0.980
+   - features.2.0.block.0.1.bias (16-bit), ratio=0.990
+   - features.2.0.block.1.1.weight (16-bit), ratio=0.990
+
+ ⚠ Found 94 tensors with negative gain:
+   - features.0.1.weight (8-bit), gain=-6.25%
+   - features.0.1.weight (16-bit), gain=-3.12%
+   - features.0.1.bias (8-bit), gain=-6.25%
+   - features.0.1.bias (16-bit), gain=-3.12%
+   - features.1.0.block.0.1.weight (8-bit), gain=-6.25%
+   - features.1.0.block.0.1.weight (16-bit), gain=-3.12%
+   - features.1.0.block.0.1.bias (8-bit), gain=-6.25%
+   - features.1.0.block.0.1.bias (16-bit), gain=-3.12%
+   - features.1.0.block.1.fc1.bias (8-bit), gain=-25.00%
+   - features.1.0.block.1.fc1.bias (16-bit), gain=-12.50%
+   - features.1.0.block.1.fc2.bias (8-bit), gain=-6.25%
+   - features.1.0.block.1.fc2.bias (16-bit), gain=-3.12%
+   - features.1.0.block.2.1.weight (8-bit), gain=-12.50%
+   - features.1.0.block.2.1.weight (16-bit), gain=-6.25%
+   - features.1.0.block.2.1.bias (8-bit), gain=-12.50%
+   - features.1.0.block.2.1.bias (16-bit), gain=-6.25%
+   - features.2.0.block.0.1.weight (16-bit), gain=-1.04%
+   - features.2.0.block.0.1.bias (8-bit), gain=-2.08%
+   - features.2.0.block.0.1.bias (16-bit), gain=-1.04%
+   - features.2.0.block.1.1.weight (16-bit), gain=-1.04%
+
+ 🔍 Found 94 BAD tensors (ratio <1 or gain <0).
+   Showing first 30 with overhead details:
+
+   - features.0.1.weight (8-bit): raw=32B → comp=34B (overhead=2 bytes)
+   - features.0.1.weight (16-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - features.0.1.bias (8-bit): raw=32B → comp=34B (overhead=2 bytes)
+   - features.0.1.bias (16-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - features.1.0.block.0.1.weight (8-bit): raw=32B → comp=34B (overhead=2 bytes)
+   - features.1.0.block.0.1.weight (16-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - features.1.0.block.0.1.bias (8-bit): raw=32B → comp=34B (overhead=2 bytes)
+   - features.1.0.block.0.1.bias (16-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - features.1.0.block.1.fc1.bias (8-bit): raw=8B → comp=10B (overhead=2 bytes)
+   - features.1.0.block.1.fc1.bias (16-bit): raw=16B → comp=18B (overhead=2 bytes)
+   - features.1.0.block.1.fc2.bias (8-bit): raw=32B → comp=34B (overhead=2 bytes)
+   - features.1.0.block.1.fc2.bias (16-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - features.1.0.block.2.1.weight (8-bit): raw=16B → comp=18B (overhead=2 bytes)
+   - features.1.0.block.2.1.weight (16-bit): raw=32B → comp=34B (overhead=2 bytes)
+   - features.1.0.block.2.1.bias (8-bit): raw=16B → comp=18B (overhead=2 bytes)
+   - features.1.0.block.2.1.bias (16-bit): raw=32B → comp=34B (overhead=2 bytes)
+   - features.2.0.block.0.1.weight (16-bit): raw=192B → comp=194B (overhead=2 bytes)
+   - features.2.0.block.0.1.bias (8-bit): raw=96B → comp=98B (overhead=2 bytes)
+   - features.2.0.block.0.1.bias (16-bit): raw=192B → comp=194B (overhead=2 bytes)
+   - features.2.0.block.1.1.weight (16-bit): raw=192B → comp=194B (overhead=2 bytes)
+   - features.2.0.block.1.1.bias (16-bit): raw=192B → comp=194B (overhead=2 bytes)
+   - features.2.0.block.2.fc2.bias (16-bit): raw=192B → comp=194B (overhead=2 bytes)
+   - features.2.0.block.3.1.weight (8-bit): raw=24B → comp=26B (overhead=2 bytes)
+   - features.2.0.block.3.1.weight (16-bit): raw=48B → comp=50B (overhead=2 bytes)
+   - features.2.0.block.3.1.bias (8-bit): raw=24B → comp=26B (overhead=2 bytes)
+   - features.2.0.block.3.1.bias (16-bit): raw=48B → comp=50B (overhead=2 bytes)
+   - features.2.1.block.0.1.bias (16-bit): raw=288B → comp=290B (overhead=2 bytes)
+   - features.2.1.block.1.1.bias (8-bit): raw=144B → comp=146B (overhead=2 bytes)
+   - features.2.1.block.1.1.bias (16-bit): raw=288B → comp=290B (overhead=2 bytes)
+   - features.2.1.block.2.fc1.bias (8-bit): raw=6B → comp=8B (overhead=2 bytes)
+   ... + 64 more
+
+ 📊 Overhead distribution summary:
+   1 byte  : 1
+   2 bytes : 93
+   3 bytes : 0
+   ≥4 bytes: 0
+ ⇒ ❌ This model likely needs BYPASS mode for some tensors.
+
+--- Analyzing: multi_model_quant_eval\resnet50_buffers_compression.csv ---
+Total rows: 212
+
+ ⚠ Found 43 tensors with ratio < 1:
+   - bn1.running_var (16-bit), ratio=0.992
+   - layer1.0.bn1.running_mean (8-bit), ratio=0.970
+   - layer1.0.bn1.running_mean (16-bit), ratio=0.985
+   - layer1.0.bn1.running_var (16-bit), ratio=0.992
+   - layer1.0.bn2.running_mean (8-bit), ratio=0.970
+   - layer1.0.bn2.running_mean (16-bit), ratio=0.985
+   - layer1.0.bn2.running_var (16-bit), ratio=0.985
+   - layer1.1.bn1.running_mean (8-bit), ratio=0.970
+   - layer1.1.bn1.running_mean (16-bit), ratio=0.985
+   - layer1.1.bn1.running_var (8-bit), ratio=0.970
+   - layer1.1.bn1.running_var (16-bit), ratio=0.985
+   - layer1.1.bn2.running_mean (8-bit), ratio=0.970
+   - layer1.1.bn2.running_mean (16-bit), ratio=0.985
+   - layer1.1.bn2.running_var (8-bit), ratio=0.970
+   - layer1.1.bn2.running_var (16-bit), ratio=0.985
+   - layer1.2.bn1.running_mean (8-bit), ratio=0.970
+   - layer1.2.bn1.running_mean (16-bit), ratio=0.985
+   - layer1.2.bn1.running_var (8-bit), ratio=0.970
+   - layer1.2.bn1.running_var (16-bit), ratio=0.985
+   - layer1.2.bn2.running_mean (8-bit), ratio=0.970
+
+ ⚠ Found 43 tensors with negative gain:
+   - bn1.running_var (16-bit), gain=-0.78%
+   - layer1.0.bn1.running_mean (8-bit), gain=-3.12%
+   - layer1.0.bn1.running_mean (16-bit), gain=-1.56%
+   - layer1.0.bn1.running_var (16-bit), gain=-0.78%
+   - layer1.0.bn2.running_mean (8-bit), gain=-3.12%
+   - layer1.0.bn2.running_mean (16-bit), gain=-1.56%
+   - layer1.0.bn2.running_var (16-bit), gain=-1.56%
+   - layer1.1.bn1.running_mean (8-bit), gain=-3.12%
+   - layer1.1.bn1.running_mean (16-bit), gain=-1.56%
+   - layer1.1.bn1.running_var (8-bit), gain=-3.12%
+   - layer1.1.bn1.running_var (16-bit), gain=-1.56%
+   - layer1.1.bn2.running_mean (8-bit), gain=-3.12%
+   - layer1.1.bn2.running_mean (16-bit), gain=-1.56%
+   - layer1.1.bn2.running_var (8-bit), gain=-3.12%
+   - layer1.1.bn2.running_var (16-bit), gain=-1.56%
+   - layer1.2.bn1.running_mean (8-bit), gain=-3.12%
+   - layer1.2.bn1.running_mean (16-bit), gain=-1.56%
+   - layer1.2.bn1.running_var (8-bit), gain=-3.12%
+   - layer1.2.bn1.running_var (16-bit), gain=-1.56%
+   - layer1.2.bn2.running_mean (8-bit), gain=-3.12%
+
+ 🔍 Found 43 BAD tensors (ratio <1 or gain <0).
+   Showing first 30 with overhead details:
+
+   - bn1.running_var (16-bit): raw=128B → comp=129B (overhead=1 bytes)
+   - layer1.0.bn1.running_mean (8-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - layer1.0.bn1.running_mean (16-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer1.0.bn1.running_var (16-bit): raw=128B → comp=129B (overhead=1 bytes)
+   - layer1.0.bn2.running_mean (8-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - layer1.0.bn2.running_mean (16-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer1.0.bn2.running_var (16-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer1.1.bn1.running_mean (8-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - layer1.1.bn1.running_mean (16-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer1.1.bn1.running_var (8-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - layer1.1.bn1.running_var (16-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer1.1.bn2.running_mean (8-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - layer1.1.bn2.running_mean (16-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer1.1.bn2.running_var (8-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - layer1.1.bn2.running_var (16-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer1.2.bn1.running_mean (8-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - layer1.2.bn1.running_mean (16-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer1.2.bn1.running_var (8-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - layer1.2.bn1.running_var (16-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer1.2.bn2.running_mean (8-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - layer1.2.bn2.running_mean (16-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer1.2.bn2.running_var (8-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - layer1.2.bn2.running_var (16-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer2.0.bn1.running_mean (8-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer2.0.bn1.running_mean (16-bit): raw=256B → comp=258B (overhead=2 bytes)
+   - layer2.0.bn2.running_mean (16-bit): raw=256B → comp=257B (overhead=1 bytes)
+   - layer2.1.bn1.running_mean (8-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer2.1.bn1.running_mean (16-bit): raw=256B → comp=258B (overhead=2 bytes)
+   - layer2.1.bn2.running_mean (8-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer2.1.bn2.running_mean (16-bit): raw=256B → comp=258B (overhead=2 bytes)
+   ... + 13 more
+
+ 📊 Overhead distribution summary:
+   1 byte  : 4
+   2 bytes : 39
+   3 bytes : 0
+   ≥4 bytes: 0
+ ⇒ ❌ This model likely needs BYPASS mode for some tensors.
+
+--- Analyzing: multi_model_quant_eval\resnet50_compression.csv ---
+Total rows: 322
+
+ ⚠ Found 51 tensors with ratio < 1:
+   - bn1.weight (16-bit), ratio=0.985
+   - bn1.bias (8-bit), ratio=0.970
+   - bn1.bias (16-bit), ratio=0.985
+   - layer1.0.bn1.weight (8-bit), ratio=0.970
+   - layer1.0.bn1.weight (16-bit), ratio=0.985
+   - layer1.0.bn1.bias (8-bit), ratio=0.970
+   - layer1.0.bn1.bias (16-bit), ratio=0.985
+   - layer1.0.bn2.weight (8-bit), ratio=0.970
+   - layer1.0.bn2.weight (16-bit), ratio=0.985
+   - layer1.0.bn2.bias (8-bit), ratio=0.970
+   - layer1.0.bn2.bias (16-bit), ratio=0.985
+   - layer1.1.bn1.weight (8-bit), ratio=0.970
+   - layer1.1.bn1.weight (16-bit), ratio=0.985
+   - layer1.1.bn1.bias (8-bit), ratio=0.970
+   - layer1.1.bn1.bias (16-bit), ratio=0.985
+   - layer1.1.bn2.weight (8-bit), ratio=0.970
+   - layer1.1.bn2.weight (16-bit), ratio=0.985
+   - layer1.1.bn2.bias (8-bit), ratio=0.970
+   - layer1.1.bn2.bias (16-bit), ratio=0.985
+   - layer1.2.bn1.weight (8-bit), ratio=0.985
+
+ ⚠ Found 51 tensors with negative gain:
+   - bn1.weight (16-bit), gain=-1.56%
+   - bn1.bias (8-bit), gain=-3.12%
+   - bn1.bias (16-bit), gain=-1.56%
+   - layer1.0.bn1.weight (8-bit), gain=-3.12%
+   - layer1.0.bn1.weight (16-bit), gain=-1.56%
+   - layer1.0.bn1.bias (8-bit), gain=-3.12%
+   - layer1.0.bn1.bias (16-bit), gain=-1.56%
+   - layer1.0.bn2.weight (8-bit), gain=-3.12%
+   - layer1.0.bn2.weight (16-bit), gain=-1.56%
+   - layer1.0.bn2.bias (8-bit), gain=-3.12%
+   - layer1.0.bn2.bias (16-bit), gain=-1.56%
+   - layer1.1.bn1.weight (8-bit), gain=-3.12%
+   - layer1.1.bn1.weight (16-bit), gain=-1.56%
+   - layer1.1.bn1.bias (8-bit), gain=-3.12%
+   - layer1.1.bn1.bias (16-bit), gain=-1.56%
+   - layer1.1.bn2.weight (8-bit), gain=-3.12%
+   - layer1.1.bn2.weight (16-bit), gain=-1.56%
+   - layer1.1.bn2.bias (8-bit), gain=-3.12%
+   - layer1.1.bn2.bias (16-bit), gain=-1.56%
+   - layer1.2.bn1.weight (8-bit), gain=-1.56%
+
+ 🔍 Found 51 BAD tensors (ratio <1 or gain <0).
+   Showing first 30 with overhead details:
+
+   - bn1.weight (16-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - bn1.bias (8-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - bn1.bias (16-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer1.0.bn1.weight (8-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - layer1.0.bn1.weight (16-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer1.0.bn1.bias (8-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - layer1.0.bn1.bias (16-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer1.0.bn2.weight (8-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - layer1.0.bn2.weight (16-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer1.0.bn2.bias (8-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - layer1.0.bn2.bias (16-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer1.1.bn1.weight (8-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - layer1.1.bn1.weight (16-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer1.1.bn1.bias (8-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - layer1.1.bn1.bias (16-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer1.1.bn2.weight (8-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - layer1.1.bn2.weight (16-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer1.1.bn2.bias (8-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - layer1.1.bn2.bias (16-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer1.2.bn1.weight (8-bit): raw=64B → comp=65B (overhead=1 bytes)
+   - layer1.2.bn1.weight (16-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer1.2.bn1.bias (8-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - layer1.2.bn1.bias (16-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer1.2.bn2.weight (8-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - layer1.2.bn2.weight (16-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer1.2.bn2.bias (8-bit): raw=64B → comp=66B (overhead=2 bytes)
+   - layer1.2.bn2.bias (16-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer2.0.bn1.weight (16-bit): raw=256B → comp=257B (overhead=1 bytes)
+   - layer2.0.bn1.bias (8-bit): raw=128B → comp=130B (overhead=2 bytes)
+   - layer2.0.bn1.bias (16-bit): raw=256B → comp=258B (overhead=2 bytes)
+   ... + 21 more
+
+ 📊 Overhead distribution summary:
+   1 byte  : 2
+   2 bytes : 49
+   3 bytes : 0
+   ≥4 bytes: 0
+ ⇒ ❌ This model likely needs BYPASS mode for some tensors.
+
+--- Analyzing: multi_model_quant_eval\vit_b16_buffers_compression.csv ---
+Total rows: 0
+ ✔ No compression ratio < 1
+ ✔ No negative gain
+
+ ✔ No overhead issues (no bad tensors).
+ ⇒ ✔ This model seems OK.
+
+--- Analyzing: multi_model_quant_eval\vit_b16_compression.csv ---
+Total rows: 304
+
+ ⚠ Found 2 tensors with ratio < 1:
+   - encoder.layers.encoder_layer_11.ln_2.bias (8-bit), ratio=0.997
+   - encoder.layers.encoder_layer_11.ln_2.bias (16-bit), ratio=0.999
+
+ ⚠ Found 2 tensors with negative gain:
+   - encoder.layers.encoder_layer_11.ln_2.bias (8-bit), gain=-0.26%
+   - encoder.layers.encoder_layer_11.ln_2.bias (16-bit), gain=-0.13%
+
+ 🔍 Found 2 BAD tensors (ratio <1 or gain <0).
+   Showing first 30 with overhead details:
+
+   - encoder.layers.encoder_layer_11.ln_2.bias (8-bit): raw=768B → comp=770B (overhead=2 bytes)
+   - encoder.layers.encoder_layer_11.ln_2.bias (16-bit): raw=1536B → comp=1538B (overhead=2 bytes)
+
+ 📊 Overhead distribution summary:
+   1 byte  : 0
+   2 bytes : 2
+   3 bytes : 0
+   ≥4 bytes: 0
+ ⇒ ❌ This model likely needs BYPASS mode for some tensors.
+
+=== Done ===
+
+
+--- Analyzing: bert_quant_eval_mixed\compression_results.csv ---
+Total rows: 402
+
+ ⚠ Found 2 tensors with ratio < 1:
+   - classifier.bias (8-bit), ratio=0.750
+   - classifier.bias (12-bit), ratio=0.750
+
+ ⚠ Found 2 tensors with negative gain:
+   - classifier.bias (8-bit), gain=-33.33%
+   - classifier.bias (12-bit), gain=-33.33%
+
+ 🔍 Found 2 BAD tensors (ratio <1 or gain <0).
+   Showing first 30 with overhead details:
+
+   - classifier.bias (8-bit): raw=3B → comp=4B (overhead=1 bytes)
+   - classifier.bias (12-bit): raw=3B → comp=4B (overhead=1 bytes)
+
+ 📊 Overhead distribution summary:
+   1 byte  : 2
+   2 bytes : 0
+   3 bytes : 0
+   ≥4 bytes: 0
+ ⇒ ❌ This model likely needs BYPASS mode for some tensors.
+
+=== Done ===
+
+--- Analyzing: gpt_quant_eval_mixed\compression_results.csv ---
+Total rows: 292
+ ✔ No compression ratio < 1
+ ✔ No negative gain
+
+ ✔ No overhead issues (no bad tensors).
+ ⇒ ✔ This model seems OK.
+
+=== Done ===

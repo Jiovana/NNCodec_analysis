@@ -1,0 +1,2 @@
+peak_enc_mem_median,peak_enc_mem_p95,peak_enc_mem_max,peak_dec_mem_median,peak_dec_mem_p95,peak_dec_mem_max,peak_delta_enc_median,peak_delta_enc_p95,peak_delta_enc_max,peak_delta_dec_median,peak_delta_dec_p95,peak_delta_dec_max
+1368023040.0,1677973913.6,1753388646.4,1368023859.2,1677963264.0,1753359974.4,19660.8,2659123.2,13202227.2,1638.4,9457664.0,75032166.4

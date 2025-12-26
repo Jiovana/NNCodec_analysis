@@ -1,0 +1,55 @@
+model_name = "textattack/bert-base-uncased-SST-2"
+model = AutoModelForSequenceClassification.from_pretrained(model_name)
+Accuracy: 0.9243119266055045 
+FLOPs: 10,884,515,328
+Total parameters: 109,483,778
+batch size: 1
+sequence length : 128
+Accuracy: 0.9243119266055045 for Reconstructed model mixed 8 bit weight 12 bit other
+was around 70% for 8bit everything
+
+model_name = "openai-gpt"   # or your GPT-1 checkpoint
+model = AutoModelForCausalLM.from_pretrained(model_name).to("cpu")
+Perplexity: 77.0177, avg_nll: 4.344036, tokens: 489782
+FLOPs: 15,164,669,952
+Total parameters: 116,535,552
+Sequence length: 128
+Batch size: 1
+Perplexity: 107.2686, avg_nll: 4.675336, tokens: 489782 for 
+Reconstructed model with 8 bit weight and 16 bit bias and norm
+was >3k for 8bit everything
+
+model = models.resnet50(weights=models.ResNet50_Weights.IMAGENET1K_V1)
+resnet50 Top-1 Accuracy: 76.15%
+resnet50 Top-5 Accuracy: 92.87%
+acc@1 (on ImageNet-1K) 76.13
+acc@5 (on ImageNet-1K) 92.862
+num_params 25,557,032
+GFLOPS 4.09
+File size 97.8 MB
+resnet50 Top-1 Accuracy: 0.10%
+resnet50 Top-5 Accuracy: 0.50% for everything 8bit...
+resnet50 Top-1 Accuracy: 76.15%
+resnet50 Top-5 Accuracy: 92.87% after including the buffers
+
+model = models.efficientnet_b0(weights=models.EfficientNet_B0_Weights.IMAGENET1K_V1)
+efficientnet_b0 Top-1 Accuracy: 77.67%
+efficientnet_b0 Top-5 Accuracy: 93.58%
+acc@1 (on ImageNet-1K) 77.692
+acc@5 (on ImageNet-1K) 93.532
+num_params 5,288,548
+GFLOPS 0.39
+File size 20.5 MB
+with reconstructed 8 bits params and buffers
+efficientnet_b0 Top-1 Accuracy: 77.70%
+efficientnet_b0 Top-5 Accuracy: 93.52% 
+
+model = models.vit_b_16(weights=models.ViT_B_16_Weights.IMAGENET1K_V1)
+vit_b_16 Top-1 Accuracy: 81.07%
+vit_b_16 Top-5 Accuracy: 95.32%
+
+acc@1 (on ImageNet-1K) 81.072
+acc@5 (on ImageNet-1K) 95.318
+num_params 86,567,656
+GFLOPS 17.56
+File size 330.3 MB

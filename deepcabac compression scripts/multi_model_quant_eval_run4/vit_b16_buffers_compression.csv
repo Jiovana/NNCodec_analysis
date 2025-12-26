@@ -1,0 +1,1 @@
+param_name,layer_type,shape,numel,bits_quant,raw_bytes,qstep,mse_quant,nmse_quant,mse_post,nmse_post,compressed_bytes,compression_ratio,compression_gain_pct,bits_per_element,decoded_equal,mode_used,peak_enc_mem,peak_dec_mem,encode_time,decode_time,peak_delta_enc,peak_delta_dec
